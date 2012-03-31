@@ -33,7 +33,7 @@
 //#define DEBUG
 #define ANNOTATE_AVOIDOBSTACLES
 #define ANNOTATE_AVOIDNEIGHBORS
-#define ANNOTATE_PATH
+//#define ANNOTATE_PATH
 
 using System;
 using System.Collections;
