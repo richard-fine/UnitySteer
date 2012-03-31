@@ -1,4 +1,4 @@
-#define ANNOTATE_AVOIDOBSTACLES
+//#define ANNOTATE_AVOIDOBSTACLES
 using UnityEngine;
 using UnitySteer;
 using UnitySteer.Helpers;

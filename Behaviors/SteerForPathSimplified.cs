@@ -132,12 +132,4 @@ public class SteerForPathSimplified : Steering
 		
 		return seek;
 	}
-	
-	protected void OnDrawGizmosSelected()
-	{
-		if (Path != null)
-		{
-			Path.DrawGizmos();
-		}
-	}
 }

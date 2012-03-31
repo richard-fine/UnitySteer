@@ -1,4 +1,4 @@
-#define ANNOTATE_AVOIDNEIGHBORS
+//#define ANNOTATE_AVOIDNEIGHBORS
 using UnityEngine;
 
 [AddComponentMenu("UnitySteer/Steer/... for Neighbor Avoidance")]

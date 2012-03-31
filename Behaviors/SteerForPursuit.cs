@@ -1,4 +1,4 @@
-#define ANNOTATE_PURSUIT
+//#define ANNOTATE_PURSUIT
 using UnityEngine;
 using UnitySteer;
 using UnitySteer.Helpers;

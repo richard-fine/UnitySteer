@@ -1,4 +1,4 @@
-#define DEBUG_DRAWNEIGHBORS
+//#define DEBUG_DRAWNEIGHBORS
 using UnityEngine;
 using UnitySteer;
 using UnitySteer.Helpers;
