@@ -1,8 +1,8 @@
 using System.Linq;
-using C5;
 using UnityEngine;
 using UnitySteer;
 using UnitySteer.Helpers;
+using System.Collections.Generic;
 
 
 /// <summary>
@@ -30,8 +30,8 @@ public class Radar : MonoBehaviour, ITick {
 		
 	
 	IList<Collider> _detected;
-	IList<Vehicle> _vehicles = new ArrayList<Vehicle>();
-	IList<Obstacle> _obstacles = new ArrayList<Obstacle>();
+	IList<Vehicle> _vehicles = new List<Vehicle>();
+	IList<Obstacle> _obstacles = new List<Obstacle>();
 	
 	ObstacleFactory _obstacleFactory = null;
 	
@@ -69,7 +69,7 @@ public class Radar : MonoBehaviour, ITick {
 	public IList<Obstacle> Obstacles {
 		get {
 			ExecuteRadar();
-			return new GuardedList<Obstacle>(_obstacles);
+			return _obstacles;
 		}
 
 	}
@@ -98,7 +98,7 @@ public class Radar : MonoBehaviour, ITick {
 	public IList<Vehicle> Vehicles {
 		get {
 			ExecuteRadar();
-			return new GuardedList<Vehicle>(_vehicles);
+			return _vehicles;
 		}
 	}
 
@@ -172,15 +172,16 @@ public class Radar : MonoBehaviour, ITick {
 	
 	protected virtual IList<Collider> Detect()
 	{
-		return new ArrayList<Collider>();
+		return new List<Collider>();
 	}
 	
 	protected virtual void FilterDetected()
 	{
 		_vehicles.Clear();
 		_obstacles.Clear();
-		foreach (var other in _detected)
+		for (var index = 0; index < _detected.Count; ++index) 
 		{
+			var other = _detected[index];
 			var vehicle = other.gameObject.GetComponent<Vehicle>();
 			if (vehicle != null && (vehicle.enabled || _detectDisabledVehicles) && other.gameObject != this.gameObject)
 			{
