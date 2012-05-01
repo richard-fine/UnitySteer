@@ -119,6 +119,7 @@ public class Steering : MonoBehaviour, ITick {
 	{
 		_vehicle = this.GetComponent<Vehicle>();
 		ReportedArrival = true; // Default to true to avoid unnecessary notifications
+        if(_tick == null) _tick = new Tick(0.1f);
 	}
 	
 	/// <summary>
@@ -131,5 +132,12 @@ public class Steering : MonoBehaviour, ITick {
 	{
 		return Vector3.zero;
 	}
+
+    public Color GizmoColor = Color.yellow;
+    public virtual void OnDrawGizmosSelected()
+    {
+        Gizmos.color = GizmoColor;
+        Gizmos.DrawLine(Vehicle.Position, Vehicle.Position + Force);
+    }
 	#endregion
 }

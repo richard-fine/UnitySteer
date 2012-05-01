@@ -1,4 +1,4 @@
-#define TRACE_PATH
+//#define TRACE_PATH
 using System.Collections;
 using UnityEngine;
 using UnitySteer;

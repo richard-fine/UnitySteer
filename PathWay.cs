@@ -160,10 +160,5 @@ namespace UnitySteer
             MapPointToPath(point, ref tStruct);
             return tStruct.outside;
         }
-		
-		
-		public virtual void DrawGizmos()
-		{
-		}
     }
 }

@@ -27,7 +27,5 @@ namespace UnitySteer
 
 		// how far outside path tube is the given point?  (negative is inside)
 		float HowFarOutsidePath (Vector3 point);
-
-		void DrawGizmos ();
 	}
 }
