@@ -95,7 +95,7 @@ public class Radar : MonoBehaviour, ITick {
 	/// <summary>
 	/// List of vehicles detected among the colliders
 	/// </summary>
-	public IList<Vehicle> Vehicles {
+	public virtual IList<Vehicle> Vehicles {
 		get {
 			ExecuteRadar();
 			return _vehicles;
@@ -160,7 +160,7 @@ public class Radar : MonoBehaviour, ITick {
 	}
 	
 	
-	void ExecuteRadar()
+	protected virtual void ExecuteRadar()
 	{
 		if (_tick.ShouldTick()) {
 			_detected = Detect();
