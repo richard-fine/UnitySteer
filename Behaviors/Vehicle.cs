@@ -126,11 +126,11 @@ public class Vehicle : DetectableObject
 	public float Mass {
 		get
 		{
-			return (rigidbody != null && !_overrideRigidbodyMass) ? rigidbody.mass : _internalMass;
+			return (!_overrideRigidbodyMass && rigidbody != null) ? rigidbody.mass : _internalMass;
 		}
 		set
 		{
-			if(rigidbody != null && !_overrideRigidbodyMass)
+			if(!_overrideRigidbodyMass && rigidbody != null)
 			{
 				rigidbody.mass = value;
 			}
